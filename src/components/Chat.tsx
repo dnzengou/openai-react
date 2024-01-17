@@ -21,7 +21,7 @@ const Chat: React.FC = () => {
   useEffect(() => {
     setMessages([
       {
-        content: "Hi, I'm your personal assistant. How can I help you?",
+        content: "Hi, I'm a GPT AI assistant. What can I do for you?",
         isUser: false,
       },
     ]);
@@ -34,11 +34,14 @@ const Chat: React.FC = () => {
     });
 
     // Create an assistant
+    // Tech assistant
+    // You are an AI Assistant that acts as a technology coach for startups, freelancers and innovative organizations in search for synergies between space and deep technologies, lean and human-centered design business models,...
+      // model: gpt-4-1106-preview
     const assistant = await openai.beta.assistants.create({
-      name: "Hockey Expert",
-      instructions: "You are a hockey expert. You specialize in helping others learn about hockey.",
+      name: "Technology Assistant",
+      instructions: "You are a tech coach and mentor for startups, freelancers and innovative organizations who wants to innovate, build digital products or services, disrupt markets, how to grow ventures in challenging uncertain times.",
       tools: [{ type: "code_interpreter" }],
-      model: "gpt-4-1106-preview",
+      model: "gpt-3.5-turbo-1106",
     });
 
     // Create a thread
